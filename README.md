@@ -18,10 +18,10 @@ bot do zap/email/sms para avisar sobre dia de vacinação iminente
 
 
 ## ROADMAP 1 DIA 
-[] Cadastro de usuário 
-[] Cadastro de dependente 
-[] Tables sobre vacinas 
-[] Recuperar senha 
-[] cadastro de nova vacina 
-[] busca de todas as vacinas tomadas 
-[] Onde dar deploy de back for free 
+- [ ] Cadastro de usuário 
+- [ ] Cadastro de dependente 
+- [x] Tables sobre vacinas 
+- [ ] Recuperar senha 
+- [ ] cadastro de nova vacina 
+- [ ] busca de todas as vacinas tomadas 
+- [ ] Onde dar deploy de back for free 
