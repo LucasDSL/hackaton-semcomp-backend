@@ -12,37 +12,37 @@ datasource db {
 
 model User { 
   id Int @id @default(autoincrement())
-  cpf String 
+  cpf String @unique 
   name String 
   email String 
   age Int
   phone String
   dependents Dependent[]
   password String 
-  createdAt DateTime
-  updatedAt DateTime
+  createdAt DateTime?
+  updatedAt DateTime?
   shotsTakenByUser ShotsTakenByUser[]
 }
 
 model Dependent {
   id Int @id @default(autoincrement())
-  cpf String 
+  cpf String @unique
   name String 
   email String?
   password String?
   age Int
   responsible User @relation(fields: [responsibleId], references: [id])
   responsibleId Int
-  createdAt DateTime
-  updatedAt DateTime
+  createdAt DateTime?
+  updatedAt DateTime?
 }
 
 model Shot {
   id Int @id @default(autoincrement())
   name String 
   description String 
-  createdAt DateTime
-  updatedAt DateTime
+  createdAt DateTime?
+  updatedAt DateTime?
   usersThatTook ShotsTakenByUser[]
 }
 

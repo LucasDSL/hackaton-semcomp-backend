@@ -6,10 +6,13 @@ import {
   Patch,
   Param,
   Delete,
+  UseGuards,
+  Request,
 } from '@nestjs/common';
 import { UserService } from './user.service';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { Prisma } from '@prisma/client';
+import { JwtAuthGuard } from 'src/auth/jwt.guard';
 
 @Controller('user')
 export class UserController {
@@ -25,6 +28,12 @@ export class UserController {
     return this.userService.users({
       /* PUT BODY FROM userService.users HERE */
     });
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Get('profile')
+  findSelf(@Request() req) {
+    return this.userService.user({ cpf: req.user.cpf });
   }
 
   @Get(':id')
