@@ -10,7 +10,6 @@ import {
   Request,
 } from '@nestjs/common';
 import { UserService } from './user.service';
-import { UpdateUserDto } from './dto/update-user.dto';
 import { Prisma } from '@prisma/client';
 import { JwtAuthGuard } from 'src/auth/jwt.guard';
 
@@ -31,7 +30,7 @@ export class UserController {
   }
 
   @UseGuards(JwtAuthGuard)
-  @Get('profile')
+  @Get()
   findSelf(@Request() req) {
     return this.userService.user({ cpf: req.user.cpf });
   }
@@ -42,7 +41,7 @@ export class UserController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
+  update(@Param('id') id: string, @Body() updateUserDto) {
     return this.userService.updateUser({ where: { id: Number(id) }, data: {} });
   }
 
