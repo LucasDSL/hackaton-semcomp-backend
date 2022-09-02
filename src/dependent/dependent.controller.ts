@@ -7,10 +7,8 @@ import {
   Param,
   Delete,
 } from '@nestjs/common';
-import { Prisma } from '@prisma/client';
+import { Prisma } from '../generated/client/index';
 import { DependentService } from './dependent.service';
-import { CreateDependentDto } from './dto/create-dependent.dto';
-import { UpdateDependentDto } from './dto/update-dependent.dto';
 
 @Controller('dependent')
 export class DependentController {

@@ -27,3 +27,6 @@ bot do zap/email/sms para avisar sobre dia de vacinação iminente
 - [ ] cadastro de nova vacina 
 - [ ] busca de todas as vacinas tomadas 
 - [ ] Onde dar deploy de back for free 
+
+## ALGUNS DADOS PRO PITCH 
+- problematica: pessoas utilizando caderneta físicas 
