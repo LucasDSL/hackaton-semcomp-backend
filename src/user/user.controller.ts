@@ -35,6 +35,12 @@ export class UserController {
     );
   }
 
+  @UseGuards(JwtAuthGuard)
   @Post('shot')
-  createShot(@Body() createShotDto) {}
+  async createShotConnected(
+    @Request() req,
+    @Body() createShotDto: Prisma.ShotCreateInput,
+  ) {
+    return this.userService.createShotForUser(req.user.cpf, createShotDto);
+  }
 }

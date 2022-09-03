@@ -62,4 +62,18 @@ export class UserService {
       },
     });
   }
+
+  async createShotForUser(
+    userCpf: string,
+    createShotDto: Prisma.ShotCreateInput,
+  ) {
+    const newShot = await this.shotService.createShot(createShotDto);
+
+    return this.prisma.user.update({
+      where: { cpf: userCpf },
+      data: {
+        shotsTakenByUser: { connect: { id: newShot.id } },
+      },
+    });
+  }
 }
