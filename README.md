@@ -2,7 +2,7 @@
 
 https://semcomp-backend-2022.herokuapp.com
 
-### [Fazendo requisições no Insomnia](./docs/Insomnia_vacinae.json) - Importe o arquivo
+### [Fazendo requisições no Insomnia](./docs/Insomnia_vacinae.har) - Importe o arquivo
 
 ### Hackathon Semcomp 2022:
 
