@@ -14,7 +14,7 @@ export class DependentController {
     @Body() createDependentDto: Prisma.DependentCreateInput,
   ) {
     return this.dependentService.createDependent(
-      Number(req.user.id),
+      req.user.cpf,
       createDependentDto,
     );
   }
