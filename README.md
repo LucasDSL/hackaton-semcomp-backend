@@ -2,7 +2,7 @@
 
 https://semcomp-backend-2022.herokuapp.com
 
-### [Fazendo requisições no Insomnia](./docs/Insomnia_vacinae.har) - Importe o arquivo
+### [Fazendo requisições no Insomnia](./docs/Insomnia_vacinAEv3.har) - Importe o arquivo
 
 ### Hackathon Semcomp 2022:
 
@@ -26,3 +26,14 @@ desenvolvimento o sustenstável](https://brasil.un.org/pt-br/sdgs).
 - [Modelo de negócios](./docs/ModeloNegociosVacinae.pdf)
 - [Design](https://www.figma.com/file/nHwxEmniePGeRbaOpsCFML/Semcomp?node-id=46%3A187)
 - [Repositório Front-end](https://github.com/moniquedsilva/hackaton-semcomp-frontend)
+
+### Como utilizar
+
+1. Clone o repositório
+2. `npm i`
+3. `npm start`[
+4. Faça requisições ao localhost:3000 de acordo com a documentação
+
+Insomnia:
+
+1. Utilize as requisições na ordem fornecida a princípio, lembrando de autenticar suas requisições com Bearer '<access_token>', após isso pode requisitar na ordem desejada.
