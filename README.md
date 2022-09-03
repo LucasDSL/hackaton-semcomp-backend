@@ -8,8 +8,8 @@ https://semcomp-backend-2022.herokuapp.com
 
 Proposta: As equipes do Hacktahon SEMCOMP 2022 deverão
 entregar uma solução tecnologica e criativa que envolva
-pelo menos um dos 17 objetivos para o
-desenvolvimento o sustenstável.
+pelo menos um dos [17 objetivos para o
+desenvolvimento o sustenstável](https://brasil.un.org/pt-br/sdgs).
 
 <img src="./docs/Capa.jpg" width=600 heigth=500>
 
@@ -21,6 +21,7 @@ desenvolvimento o sustenstável.
 
 ### Nossa solução:
 
+- Principal Objetivo: 3 - Saúde e bem estar
 - Sistema web para gerenciamento e histórico de vacinas pessoais ou de dependentes.
 - [Modelo de negócios](./docs/ModeloNegociosVacinae.pdf)
 - [Design](https://www.figma.com/file/nHwxEmniePGeRbaOpsCFML/Semcomp?node-id=46%3A187)
