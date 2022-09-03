@@ -15,16 +15,17 @@ export class ShotService {
   }
 
   async shots(params: {
-    take?: Prisma.ShotWhereUniqueInput;
-    skip?: Prisma.ShotWhereUniqueInput;
+    take?: number;
+    skip?: number;
     cursor?: Prisma.ShotWhereUniqueInput;
     where?: Prisma.ShotWhereInput;
     orderBy?: Prisma.ShotOrderByWithRelationInput;
   }): Promise<Shot[]> {
     const { skip, take, cursor, where, orderBy } = params;
+    console.log(skip, take);
     return this.prisma.shot.findMany({
-      skip: skip ? skip.id : undefined,
-      take: take ? take.id : undefined,
+      skip: skip ? skip : undefined,
+      take: take ? take : undefined,
       cursor,
       where,
       orderBy,

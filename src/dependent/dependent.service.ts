@@ -31,7 +31,10 @@ export class DependentService {
     });
   }
 
-  async createDependent(data: Prisma.DependentCreateInput): Promise<Dependent> {
+  async createDependent(
+    responsibleCpf: number,
+    data: Prisma.DependentCreateInput,
+  ): Promise<Dependent> {
     return this.prisma.dependent.create({
       data,
     });

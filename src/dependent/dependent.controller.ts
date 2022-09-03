@@ -1,16 +1,21 @@
-import { Controller, Post, Body, Param } from '@nestjs/common';
+import { Controller, Post, Body, Request, UseGuards } from '@nestjs/common';
 import { Prisma } from '@prisma/client';
+import { JwtAuthGuard } from 'src/auth/jwt.guard';
 import { DependentService } from './dependent.service';
 
 @Controller('dependent')
 export class DependentController {
   constructor(private readonly dependentService: DependentService) {}
 
-  @Post('user/:userId')
+  @UseGuards(JwtAuthGuard)
+  @Post('user')
   create(
-    @Param(':userId') userId: string,
+    @Request() req,
     @Body() createDependentDto: Prisma.DependentCreateInput,
   ) {
-    return this.dependentService.createDependent(createDependentDto);
+    return this.dependentService.createDependent(
+      Number(req.user.id),
+      createDependentDto,
+    );
   }
 }
