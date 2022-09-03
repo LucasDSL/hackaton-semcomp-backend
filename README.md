@@ -1,35 +1,27 @@
-## Link API 
+## vacinAÊ backend
+
 https://semcomp-backend-2022.herokuapp.com
-## IMPLEMENTAÇÔES PLANEJADAS
 
-- cadastro de user 
-- cadastro de dependente -> 
--     Mostrar faixa etária da criança 
--     vacinas mais indicadas para a idade ou que já deveria ter tomado 
-informações sobre vacinas (educativas?)
-- Deixar tabela sobre vacinas específicas conectadas com as pessoas usuárias 
-Aba sobre a covid com mais informações - OPCIONAL 
-- recuperar senha 
-- cadastro de nova vacinação 
-- busca de todas as vacinas tomadas 
-mostrar vacinas vigentes - quais vacinas vc precisa tomar 
-Alerta para campanhas de vacinação nacional 
-bot do zap/email/sms para avisar sobre dia de vacinação iminente
-- Pesquisar onde dar deploy (front e back)
+### [Fazendo requisições]()
 
+### Hackathon Semcomp 2022:
 
+Proposta: As equipes do Hacktahon SEMCOMP 2022 deverão
+entregar uma solução tecnologica e criativa que envolva
+pelo menos um dos 17 objetivos para o
+desenvolvimento o sustenstável.
 
-## ROADMAP 1 DIA 
-- [x] Cadastro de usuário 
-- [x] Cadastro de dependente 
-- [x] Login de usuário
-- [x] Tables sobre vacinas 
-- [x] Busca de dados próprios 
-- [ ] Recuperar senha 
-- [ ] cadastro de nova vacina 
-- [ ] busca de todas as vacinas tomadas 
-- [ ] Onde dar deploy de back for free 
+<img src="./docs/Capa.jpg" width=400 heigth=400>
 
-## ALGUNS DADOS PRO PITCH 
-- problematica: pessoas utilizando caderneta físicas 
-- lil change 
+### Equipe CONF1RM3D:
+
+- Eu
+- [Elis Marcela](https://github.com/develis)
+- [Monique Silva](https://github.com/moniquedsilva)
+
+### Nossa solução:
+
+- Sistema web para gerenciamento e histórico de vacinas pessoais ou de dependentes.
+- [Modelo de negócios](./docs/ModeloNegociosVacinae.pdf)
+- [Design](https://www.figma.com/file/nHwxEmniePGeRbaOpsCFML/Semcomp?node-id=46%3A187)
+- [Repositório Front-end](https://github.com/moniquedsilva/hackaton-semcomp-frontend)

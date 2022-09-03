@@ -17,7 +17,10 @@ export class ShotController {
   }
 
   @Get()
-  getAll(@Query('take') take?: { id?: number }) {
-    return this.shotService.shots({ take });
+  getAll(
+    @Query('take') take?: { id?: number },
+    @Query('skip') skip?: { id?: number },
+  ) {
+    return this.shotService.shots({ take, skip });
   }
 }
