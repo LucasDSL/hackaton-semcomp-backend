@@ -30,3 +30,4 @@ bot do zap/email/sms para avisar sobre dia de vacinação iminente
 
 ## ALGUNS DADOS PRO PITCH 
 - problematica: pessoas utilizando caderneta físicas 
+- lil change 
