@@ -3,11 +3,9 @@ import {
   Get,
   Post,
   Body,
-  Patch,
-  Param,
-  Delete,
   UseGuards,
   Request,
+  Param,
 } from '@nestjs/common';
 import { UserService } from './user.service';
 import { Prisma } from '@prisma/client';
@@ -22,31 +20,21 @@ export class UserController {
     return this.userService.createUser(createUserDto);
   }
 
-  @Get()
-  findAll() {
-    return this.userService.users({
-      /* PUT BODY FROM userService.users HERE */
-    });
-  }
-
   @UseGuards(JwtAuthGuard)
   @Get('profile')
   findSelf(@Request() req) {
     return this.userService.user({ cpf: req.user.cpf });
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.userService.user({ id: Number(id) });
+  @UseGuards(JwtAuthGuard)
+  @Post('shot/:id')
+  createSpecificShot(@Request() req, @Param('id') specificShotId: string) {
+    return this.userService.createWithSpecificShot(
+      req.user.cpf,
+      +specificShotId,
+    );
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateUserDto) {
-    return this.userService.updateUser({ where: { id: Number(id) }, data: {} });
-  }
-
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.userService.deleteUser({ id: Number(id) });
-  }
+  @Post('shot')
+  createShot(@Body() createShotDto) {}
 }

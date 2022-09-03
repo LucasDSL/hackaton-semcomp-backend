@@ -1,17 +1,22 @@
-import { Injectable } from '@nestjs/common';
-import { PrismaService } from '../prisma.service';
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
+import { PrismaService } from 'src/prisma/prisma.service';
 import { User, Prisma } from '@prisma/client';
 import { hashSync } from 'bcrypt';
+import { ShotService } from 'src/shot/shot.service';
 
 @Injectable()
 export class UserService {
-  constructor(private prisma: PrismaService) {}
+  constructor(
+    private prisma: PrismaService,
+    private shotService: ShotService,
+  ) {}
 
   async user(
     userWhereUniqueInput: Prisma.UserWhereUniqueInput,
   ): Promise<User | null> {
     return this.prisma.user.findUnique({
       where: userWhereUniqueInput,
+      include: { shotsTakenByUser: true },
     });
   }
 
@@ -34,27 +39,27 @@ export class UserService {
 
   async createUser(data: Prisma.UserCreateInput): Promise<User> {
     data.password = hashSync(data.password, 8);
-    data.createdAt = new Date();
-    data.updatedAt = new Date();
     return this.prisma.user.create({
       data,
     });
   }
 
-  async updateUser(params: {
-    where: Prisma.UserWhereUniqueInput;
-    data: Prisma.UserUpdateInput;
-  }): Promise<User> {
-    const { where, data } = params;
-    return this.prisma.user.update({
-      data,
-      where,
-    });
-  }
+  async createWithSpecificShot(
+    userCpf: string,
+    specificShotId: number,
+  ): Promise<any> {
+    const existShot = await this.shotService.shot({ id: specificShotId });
+    if (!existShot) {
+      throw new HttpException('Vaccine not found', HttpStatus.NOT_FOUND);
+    }
 
-  async deleteUser(where: Prisma.UserWhereUniqueInput): Promise<User> {
-    return this.prisma.user.delete({
-      where,
+    const user = await this.user({ cpf: userCpf });
+
+    return this.prisma.user.update({
+      where: { id: user.id },
+      data: {
+        shotsTakenByUser: { connect: { id: specificShotId } },
+      },
     });
   }
 }
