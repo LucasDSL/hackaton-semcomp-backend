@@ -2,7 +2,7 @@
 
 https://semcomp-backend-2022.herokuapp.com
 
-### [Fazendo requisições]()
+### [Fazendo requisições no Insomnia](./docs/Insomnia_vacinae.json) - Importe o arquivo
 
 ### Hackathon Semcomp 2022:
 
@@ -11,7 +11,7 @@ entregar uma solução tecnologica e criativa que envolva
 pelo menos um dos 17 objetivos para o
 desenvolvimento o sustenstável.
 
-<img src="./docs/Capa.jpg" width=400 heigth=400>
+<img src="./docs/Capa.jpg" width=600 heigth=500>
 
 ### Equipe CONF1RM3D:
 
