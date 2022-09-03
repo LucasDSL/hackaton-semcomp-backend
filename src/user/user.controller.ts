@@ -30,7 +30,7 @@ export class UserController {
   }
 
   @UseGuards(JwtAuthGuard)
-  @Get()
+  @Get('profile')
   findSelf(@Request() req) {
     return this.userService.user({ cpf: req.user.cpf });
   }
