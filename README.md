@@ -31,8 +31,9 @@ desenvolvimento o sustenstável](https://brasil.un.org/pt-br/sdgs).
 
 1. Clone o repositório
 2. `npm i`
-3. `npm start`[
-4. Faça requisições ao localhost:3000 de acordo com a documentação
+3. Preencha um arquivo .env de acordo com o .env-example
+4. `npm start`
+5. Faça requisições ao localhost:3000 de acordo com a documentação
 
 Insomnia:
 
