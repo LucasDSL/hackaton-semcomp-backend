@@ -26,6 +26,7 @@ desenvolvimento o sustenstável](https://brasil.un.org/pt-br/sdgs).
 - [Modelo de negócios](./docs/ModeloNegociosVacinae.pdf)
 - [Design](https://www.figma.com/file/nHwxEmniePGeRbaOpsCFML/Semcomp?node-id=46%3A187)
 - [Repositório Front-end](https://github.com/moniquedsilva/hackaton-semcomp-frontend)
+- [Slides do Pitch](./docs/Pitch_SEMCOMP.pdf)
 
 ### Como utilizar
 
